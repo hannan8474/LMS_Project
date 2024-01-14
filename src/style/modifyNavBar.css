@@ -1,0 +1,15 @@
+.navbar {
+    background-color: rgba(47, 157, 198, 1) !important
+}
+.nav-link {
+    color: white;
+}
+.nav-link:hover {
+    color: black !important;
+    font-weight: bolder;
+}
+.active {
+    font-weight: bolder !important;
+    text-decoration: underline !important;
+    color: black !important;
+}
