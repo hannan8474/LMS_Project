@@ -1,18 +1,19 @@
 import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
+import NavBar from './layouts/NavBar'
 import Home from './pages/Home'
 import Department from './pages/Department'
-import InformationTechnology from "./pages/InformationTechnology"
-import SoftwareEngineering from "./pages/SoftwareEngineering"
-import ComputerScience from "./pages/ComputerScience"
-import DataScience from "./pages/DataScience"
-import StudentPortal from "./pages/StudentPortal"
-import StudentSocieties from "./pages/StudentSocieties"
-import ErrorPage from "./pages/ErrorPage"
+import ComputerScience from './pages/ComputerScience'
+import SoftwareEngineering from './pages/SoftwareEngineering'
+import InformationTechnology from './pages/InformationTechnology'
+import DataScience from './pages/DataScience'
+import StudentPortal from './pages/StudentPortal'
+import StudentSocieties from './pages/StudentSocieties'
 import Faculty from './pages/Faculty'
-import NavBar from './layout/NavBar'
-import Footer from "./layout/Footer"
+import ErrorPage from './pages/ErrorPage'
+import Footer from './layouts/Footer'
+
 
 function App() {
   return (

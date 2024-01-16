@@ -1,5 +1,5 @@
 import React from 'react'
-import NewStudent from '../forms/newStudent'
+import NewStudent from '../views/forms/NewStudent'
 
 const StudentPortal = () => {
   return (
