@@ -8,7 +8,6 @@ const Footer = () => {
         <>
             <div className='footer'>
                 <div className='copyright'>
-                    {Date().getFullYear}
                     <p>copyright &copy; {currentYear} PUCIT. All rights reserved</p>
                 </div>
                 <div className="icons">
