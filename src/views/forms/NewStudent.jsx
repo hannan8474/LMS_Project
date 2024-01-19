@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react"
 import "../../App.css"
+import axios from 'axios'
 
 const NewStudent = () => {
   // state variables
@@ -25,7 +26,7 @@ const NewStudent = () => {
   }
 
   // function to s=handle submit form
-  const HandleSubmit = (e) => {
+  const HandleSubmit = async(e) => {
     e.preventDefault();
     // Generate subjects array based on subjectNumbers
     const subjects = [];
@@ -52,6 +53,8 @@ const NewStudent = () => {
       subjects: [],
     });
     console.log(newStudent)
+    const response = await axios.post(`http://localhost:3000/api/v1/add-student`, newStudent)
+    console.log(response)
   }
   return (
     <>
