@@ -13,6 +13,8 @@ import ErrorPage from "./pages/ErrorPage"
 import Faculty from './pages/Faculty'
 import NavBar from './layout/NavBar'
 import Footer from "./layout/Footer"
+import MediaSociety from './pages/MediaSociety'
+import SocietyRegistration from './views/forms/SocietyRegistration'
 
 function App() {
   return (
@@ -29,6 +31,9 @@ function App() {
           <Route path='/student-portal' element={<StudentPortal />} />
           <Route path='/student-societies' element={<StudentSocieties />} />
           <Route path='/faculty' element={<Faculty />} />
+          <Route path='/media-society' element={<MediaSociety />}>
+            <Route path='society-registration' element={<SocietyRegistration/>}/>
+          </Route>
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       <Footer />

@@ -2,6 +2,7 @@ import React from 'react'
 import { NavLink } from "react-router-dom"
 import logo from "../assets/Images/favicon_io/logo-new.png"
 import "../style/modifyNavBar.css"
+import "../style/modifyNavBar.css"
 // how to write modular css in react js
 
 const NavBar = () => {
@@ -9,7 +10,7 @@ const NavBar = () => {
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark">
                 <div className="container-fluid">
-                    <NavLink className="navbar-brand" to="/"><img src={logo} alt="Fcit_Logo" height="50px" /></NavLink>
+                    <NavLink className="navbar-brand" to="/"><img src={logo} alt="Fcit_Logo"/></NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>

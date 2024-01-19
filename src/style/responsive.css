@@ -1,0 +1,46 @@
+@media screen and (max-width: 768px) {
+    .dean-message {
+        display: flex;
+        flex-direction: column;
+    }
+    .intro img{
+        width: 50%;
+    }
+    .footer {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .icons {
+        padding-left: 0;
+    }
+    .navbar-brand img {
+        height: 50px !important;
+    }
+    .society-body {
+        display: flex;
+        flex-direction: column;
+    }
+    .patron-info img{
+        height: 25%;
+    }
+    .patron-info {
+        display: flex;
+        flex-direction: row;
+    }
+    .patrons {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .society-content {
+        padding: 10px 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 2px  solid black;
+        border-top: 2px solid black;
+    }
+    .contact {
+        padding: 10px 0; 
+    }
+}

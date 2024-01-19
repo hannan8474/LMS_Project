@@ -5,7 +5,7 @@ import chairmanDS from "../assets/Images/favicon_io/DDS_DrShahid.jpg"
 import chairmanSE from "../assets/Images/favicon_io/murtaza.jpg"
 import chairmanIT from "../assets/Images/favicon_io/swjaffry.jpg"
 import "../App.css"
-import "../style/homeResponsive.css"
+import "../style/responsive.css"
 import DeanIntro from '../components/commons/DeanIntro'
 import ChairmanseIntro from '../components/commons/ChairmanseIntro'
 import ChairmanitIntro from '../components/commons/ChairmanitIntro'
@@ -32,6 +32,7 @@ const Home = () => {
   }
   return (
     <>
+      {/* Modal Dialog starts */}
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
         <ModalOverlay />
         <ModalContent>
@@ -48,7 +49,7 @@ const Home = () => {
           </ModalBody>
         </ModalContent>
       </Modal>
-
+      {/* Modal Dialog Ends */}
       <h2 className='top-heading py-3'>Dean and chairperson's messages</h2>
       <div className='messages m-5'>
         <div className='dean-message my-4'>
