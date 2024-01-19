@@ -1,18 +1,54 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/modal'
 import chairmanCS from "../assets/Images/favicon_io/chairman.gif"
 import chairmanDS from "../assets/Images/favicon_io/DDS_DrShahid.jpg"
 import chairmanSE from "../assets/Images/favicon_io/murtaza.jpg"
 import chairmanIT from "../assets/Images/favicon_io/swjaffry.jpg"
 import "../App.css"
 import "../style/homeResponsive.css"
+import DeanIntro from '../components/commons/DeanIntro'
+import ChairmanseIntro from '../components/commons/ChairmanseIntro'
+import ChairmanitIntro from '../components/commons/ChairmanitIntro'
+import ChairmandsIntro from '../components/commons/ChairmandsIntro'
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // Set isOpen to true when the component mounts
+    setIsOpen(true);
+
+    // Clean up function to set isOpen to false when the component unmounts
+    return () => {
+      setIsOpen(false);
+    };
+  }, []);
   const contentStyle = {
     color: "grey",
     display: "inline-block",
   }
+  const announcement = {
+    color: "red",
+  }
   return (
     <>
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader><h3 style={announcement}>Announcements</h3></ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <ul>
+              <li>Lorem, ipsum dolor.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, beatae.</li>
+              <li>Lorem ipsum dolor sit, amet consectetur adipisicing.</li>
+              <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate quia illum ut, atque exercitationem fugit nostrum architecto minima dicta fugiat earum, obcaecati, sint natus. Labore quam similique dolorem. Dignissimos voluptas recusandae tenetur.</li>
+              <li>Lorem ipsum dolor sit amet consectetur.</li>
+            </ul>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+
       <h2 className='top-heading py-3'>Dean and chairperson's messages</h2>
       <div className='messages m-5'>
         <div className='dean-message my-4'>
@@ -21,9 +57,7 @@ const Home = () => {
             <p className='names'><b>Dr Shahzad Sarwar</b></p>
             <p style={contentStyle}>Dean FCIT<br />Chairman Department of Computer Science<br />Email:dean.fcit@pucit.edu.pk</p>
           </div>
-          <div className='mx-3'>
-            <p className='message'><i>“Being the oldest and largest seat of learning in Pakistan, on October 14, 2021, the 139th Foundation Day of university of the Punjab is commemorated with a resolve to uphold its legacy of excellence and to meet the challenges of the present and the future. Presently, though the university enjoys globally a pretty decent reputation but particularly in Asia. The university has been ranked amongst the best 22-percent universities in Asia by QS World university Rankings. Further, besides of CoVID-19 pandemic still the varsity managed to climb up the ladder by improving 16-percent in international ranking. Moreover, keeping in perspective the future demands of a rapidly chp  anging world, the varsity underwent mammoth restructuring of academic units, resulting in establishment of new faculties and departments. Now, we are ready for the challenges of the future. The legacy of Punjab university, a future guiding tool for us, is such that it has produced numerous notable scholars and scientists, whose ideas and research contributions have revolutionized and transformed the society at large. Allama Muhammad Iqbal and Dr. Abdus Salam are only two from among such notable alumni. Hence, it would be apt to claim that the establishment of Punjab university on October 14, 1882 must be marked as a memorable day, as it changed the course of history, and I am confident, the varsity will continue to do so.”</i></p>
-          </div>
+          <DeanIntro />
         </div>
         <hr />
         <div className='dean-message my-4'>
@@ -32,9 +66,7 @@ const Home = () => {
             <p className='names'><b>Dr Muhammad Murtaza Yousaf</b></p>
             <p style={contentStyle}>Chairman Department of Software Engineering<br />Email:chairman.dse@pucit.edu.pk</p>
           </div>
-          <div className='mx-3'>
-            <p className='message'><i>“Being the oldest and largest seat of learning in Pakistan, on October 14, 2021, the 139th Foundation Day of university of the Punjab is commemorated with a resolve to uphold its legacy of excellence and to meet the challenges of the present and the future. Presently, though the university enjoys globally a pretty decent reputation but particularly in Asia. The university has been ranked amongst the best 22-percent universities in Asia by QS World university Rankings. Further, besides of CoVID-19 pandemic still the varsity managed to climb up the ladder by improving 16-percent in international ranking. Moreover, keeping in perspective the future demands of a rapidly chp  anging world, the varsity underwent mammoth restructuring of academic units, resulting in establishment of new faculties and departments. Now, we are ready for the challenges of the future. The legacy of Punjab university, a future guiding tool for us, is such that it has produced numerous notable scholars and scientists, whose ideas and research contributions have revolutionized and transformed the society at large. Allama Muhammad Iqbal and Dr. Abdus Salam are only two from among such notable alumni. Hence, it would be apt to claim that the establishment of Punjab university on October 14, 1882 must be marked as a memorable day, as it changed the course of history, and I am confident, the varsity will continue to do so.”</i></p>
-          </div>
+          <ChairmanseIntro />
         </div>
         <hr />
         <div className='dean-message my-4'>
@@ -43,9 +75,7 @@ const Home = () => {
             <p className='names'><b>Dr Syed Waqar ul Quonain</b></p>
             <p style={contentStyle}>Chairman Department of Information Technology<br />Email:chairman.dit@pucit.edu.pk</p>
           </div>
-          <div className='mx-3'>
-            <p className='message'><i>“Being the oldest and largest seat of learning in Pakistan, on October 14, 2021, the 139th Foundation Day of university of the Punjab is commemorated with a resolve to uphold its legacy of excellence and to meet the challenges of the present and the future. Presently, though the university enjoys globally a pretty decent reputation but particularly in Asia. The university has been ranked amongst the best 22-percent universities in Asia by QS World university Rankings. Further, besides of CoVID-19 pandemic still the varsity managed to climb up the ladder by improving 16-percent in international ranking. Moreover, keeping in perspective the future demands of a rapidly chp  anging world, the varsity underwent mammoth restructuring of academic units, resulting in establishment of new faculties and departments. Now, we are ready for the challenges of the future. The legacy of Punjab university, a future guiding tool for us, is such that it has produced numerous notable scholars and scientists, whose ideas and research contributions have revolutionized and transformed the society at large. Allama Muhammad Iqbal and Dr. Abdus Salam are only two from among such notable alumni. Hence, it would be apt to claim that the establishment of Punjab university on October 14, 1882 must be marked as a memorable day, as it changed the course of history, and I am confident, the varsity will continue to do so.”</i></p>
-          </div>
+          <ChairmanitIntro />
         </div>
         <hr />
         <div className='dean-message my-4'>
@@ -54,9 +84,7 @@ const Home = () => {
             <p className='names'><b>Dr Shahid Manzoor</b></p>
             <p style={contentStyle}>Chairman Department of Data Science<br />Email:chairman.dds@pucit.edu.pk</p>
           </div>
-          <div className='mx-3'>
-            <p className='message'><i>“Being the oldest and largest seat of learning in Pakistan, on October 14, 2021, the 139th Foundation Day of university of the Punjab is commemorated with a resolve to uphold its legacy of excellence and to meet the challenges of the present and the future. Presently, though the university enjoys globally a pretty decent reputation but particularly in Asia. The university has been ranked amongst the best 22-percent universities in Asia by QS World university Rankings. Further, besides of CoVID-19 pandemic still the varsity managed to climb up the ladder by improving 16-percent in international ranking. Moreover, keeping in perspective the future demands of a rapidly chp  anging world, the varsity underwent mammoth restructuring of academic units, resulting in establishment of new faculties and departments. Now, we are ready for the challenges of the future. The legacy of Punjab university, a future guiding tool for us, is such that it has produced numerous notable scholars and scientists, whose ideas and research contributions have revolutionized and transformed the society at large. Allama Muhammad Iqbal and Dr. Abdus Salam are only two from among such notable alumni. Hence, it would be apt to claim that the establishment of Punjab university on October 14, 1882 must be marked as a memorable day, as it changed the course of history, and I am confident, the varsity will continue to do so.”</i></p>
-          </div>
+          <ChairmandsIntro />
         </div>
       </div>
     </>

@@ -19,24 +19,24 @@ const NavBar = () => {
                                 <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item dropdown px-3 mx-3">
-                                <NavLink className="nav-link dropdown-toggle" to="/Department" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <NavLink className="nav-link dropdown-toggle" to="/department" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Departments
                                 </NavLink>
                                 <ul className="dropdown-menu">
-                                    <li><NavLink className="dropdown-item" to="Department/ComputerScience">Computer Science</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="Department/SoftwareEngineering">Software Engineering</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="Department/InformationTechnology">Information Technology</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="Department/DataScience">Data Science</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/department/computer-science">Computer Science</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/department/software-Engineering">Software Engineering</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/department/information-technology">Information Technology</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/department/data-science">Data Science</NavLink></li>
                                 </ul>
                             </li>
                             <li className="nav-item px-3 mx-3">
-                                <NavLink className="nav-link" to="/StudentSocieties">Student Societies</NavLink>
+                                <NavLink className="nav-link" to="/student-societies">Student Societies</NavLink>
                             </li>
                             <li className="nav-item px-3 mx-3">
-                                <NavLink className="nav-link" to="/Faculty">Faculty</NavLink>
+                                <NavLink className="nav-link" to="/faculty">Faculty</NavLink>
                             </li>
                             <li className="nav-item px-3 mx-3">
-                                <NavLink className="nav-link" to="/StudentPortal">Student Portal</NavLink>
+                                <NavLink className="nav-link" to="/student-portal">Student Portal</NavLink>
                             </li>
                         </ul>
                     </div>

@@ -20,15 +20,15 @@ function App() {
       <NavBar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/Department' element={<Department />}>
-            <Route path='ComputerScience' element={<ComputerScience />} />
-            <Route path='SoftwareEngineering' element={<SoftwareEngineering />} />
-            <Route path='InformationTechnology' element={<InformationTechnology />} />
-            <Route path='DataScience' element={<DataScience />} />
+          <Route path='/department' element={<Department />}>
+            <Route path='computer-science' element={<ComputerScience />} />
+            <Route path='software-engineering' element={<SoftwareEngineering />} />
+            <Route path='information-technology' element={<InformationTechnology />} />
+            <Route path='data-science' element={<DataScience />} />
           </Route>
-          <Route path='/StudentPortal' element={<StudentPortal />} />
-          <Route path='/StudentSocieties' element={<StudentSocieties />} />
-          <Route path='/Faculty' element={<Faculty />} />
+          <Route path='/student-portal' element={<StudentPortal />} />
+          <Route path='/student-societies' element={<StudentSocieties />} />
+          <Route path='/faculty' element={<Faculty />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       <Footer />
