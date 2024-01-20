@@ -13,6 +13,7 @@ import StudentSocieties from './pages/StudentSocieties'
 import Faculty from './pages/Faculty'
 import ErrorPage from './pages/ErrorPage'
 import Footer from './layouts/Footer'
+import EnrolledStudents from './pages/EnrolledStudents'
 
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
           </Route>
           <Route path='/StudentPortal' element={<StudentPortal />} />
           <Route path='/StudentSocieties' element={<StudentSocieties />} />
+          {/* enrolled students */}
+        <Route path='/enrolled-students' element={<EnrolledStudents />} />
           <Route path='/Faculty' element={<Faculty />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>

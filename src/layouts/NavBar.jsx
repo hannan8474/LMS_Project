@@ -38,6 +38,11 @@ const NavBar = () => {
                             <li className="nav-item px-3 mx-3">
                                 <NavLink className="nav-link" to="/StudentPortal">Student Portal</NavLink>
                             </li>
+                            {/* enrolled students start*/}
+                            <li className="nav-item px-3 mx-3">
+                                <NavLink className="nav-link" to="/enrolled-students">Enrolled Students</NavLink>
+                            </li>
+                            {/* enrolled students end */}
                         </ul>
                     </div>
                 </div>
