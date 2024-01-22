@@ -13,8 +13,7 @@ import img4 from "../assets/Images/favicon_io/img-4.jpg"
 import img5 from "../assets/Images/favicon_io/img-5.jpg"
 import img6 from "../assets/Images/favicon_io/img-6.jpg"
 
-
-const MediaSociety = () => {
+const LiterarySociety = () => {
     const [buttonClicked, setButtonClicked] = useState(false);
     const HandleClick = () => {
         setButtonClicked(true);
@@ -26,7 +25,7 @@ const MediaSociety = () => {
         <>
             <div className="top-title">
                 <div className="background-opacity">
-                    <h2 className='society-names py-3'>FCIT Media Society</h2>
+                    <h2 className='society-names py-3'>FCIT Literary Society</h2>
                 </div>
             </div>
             <div className="society-body">
@@ -49,7 +48,7 @@ const MediaSociety = () => {
                     </div>
                 </div>
                 <div className="society-content px-5">
-                    <p><i>"The basic idea is to provide students with an opportunity to develop life skills which will enable them to analyze the forms of modern communication and to help students to become wise consumers of media. We want to represent PUCIT and the life at PUCIT."</i></p>
+                    <p><i>"The Sports Society organizes various student and faculty (both male and female) sports activities in the College, including Cricket, Badminton, Table Tennis, Athletics, Chess, and Tug-of-War. It organizes the yearly PUCIT Olympics, a mega annual sports festival. The society also facilitates students to take part in the various sports competitions held at the university and inter university levels."</i></p>
                     <ul>
                         <li>It will be the part of our duties to cover all types of on campus and outside campus activities and events.</li>
                         <li>PUMS will promote the image of PUCIT locally and internationally via different use of media channels.</li>
@@ -93,13 +92,12 @@ const MediaSociety = () => {
                         </button>
                         <p className="py-3">FCIT Sports Society conducted a Sports League that consisted of two tournaments, Cricket and Badminton, last month that proved to be a huge success. The event was initiated with a small opening ceremony where the participants were told about the rules of the game. The games were started immediately after the opening ceremony. The cricket tournament was held at Khalid Bin Waleed Hostel’s ground and was for boys only. The badminton tournament was only for girls that was conducted at the badminton court in FCIT Old Campus. Participants showed great zeal for the game and every match of cricket and badminton was worth watching. All the participants showcased their skills and fought well to take the top position. On top of that, the audience was also very zealous and motivating towards their favorite players and teams and their cheers helped the players to showcase their talent in an even better way. Both tournaments received an extensive response from the students and no decorum of the university was disturbed at all. The conduction of this Sports League proved to be a breath of fresh air for students in their hectic routines. FCIT Sports Society encourages all the students to extravagantly participate in different games and leagues to enjoy these off-work times to the fullest.</p>
                     </div>
-
                     <div className="society-registration">
                         {buttonClicked ?
                             // It will render after cliking the button
                             (<div><Outlet /><button className="button-styling" onClick={HandleBack}>Go Back!</button></div>) :
                             // It will reder before the button is clicked
-                            (<button className="button-styling" onClick={HandleClick}><Link to="/media-society/society-registration">Registration, One click Away!</Link></button>)}
+                            (<button className="button-styling" onClick={HandleClick}><Link to="/literary-society/society-registration">Registration, One click Away!</Link></button>)}
                     </div>
 
                 </div>
@@ -125,4 +123,4 @@ const MediaSociety = () => {
     )
 }
 
-export default MediaSociety
+export default LiterarySociety

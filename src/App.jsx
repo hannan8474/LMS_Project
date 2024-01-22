@@ -15,27 +15,37 @@ import NavBar from './layout/NavBar'
 import Footer from "./layout/Footer"
 import MediaSociety from './pages/MediaSociety'
 import SocietyRegistration from './views/forms/SocietyRegistration'
+import EnrolledStudents from './pages/EnrolledStudents'
+import SportsSociety from './pages/SportsSociety'
+import LiterarySociety from './pages/LiterarySociety'
 
 function App() {
   return (
     <>
       <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/department' element={<Department />}>
-            <Route path='computer-science' element={<ComputerScience />} />
-            <Route path='software-engineering' element={<SoftwareEngineering />} />
-            <Route path='information-technology' element={<InformationTechnology />} />
-            <Route path='data-science' element={<DataScience />} />
-          </Route>
-          <Route path='/student-portal' element={<StudentPortal />} />
-          <Route path='/student-societies' element={<StudentSocieties />} />
-          <Route path='/faculty' element={<Faculty />} />
-          <Route path='/media-society' element={<MediaSociety />}>
-            <Route path='society-registration' element={<SocietyRegistration/>}/>
-          </Route>
-          <Route path='*' element={<ErrorPage />} />
-        </Routes>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/department' element={<Department />}>
+          <Route path='computer-science' element={<ComputerScience />} />
+          <Route path='software-engineering' element={<SoftwareEngineering />} />
+          <Route path='information-technology' element={<InformationTechnology />} />
+          <Route path='data-science' element={<DataScience />} />
+        </Route>
+        <Route path='/student-portal' element={<StudentPortal />} />
+        <Route path='/student-societies' element={<StudentSocieties />} />
+        <Route path='/faculty' element={<Faculty />} />
+        <Route path='/media-society' element={<MediaSociety />}>
+          <Route path='society-registration' element={<SocietyRegistration />} />
+        </Route>
+        <Route path='/sports-society' element={<SportsSociety />}>
+          <Route path='society-registration' element={<SocietyRegistration />} />
+        </Route>
+        <Route path='/literary-society' element={<LiterarySociety />}>
+          <Route path='society-registration' element={<SocietyRegistration />} />
+        </Route>
+        <Route path='/enrolled-students' element={<EnrolledStudents />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
       <Footer />
     </>
   )

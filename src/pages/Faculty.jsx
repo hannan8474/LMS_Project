@@ -1,8 +1,9 @@
 import React from 'react'
+import LoginForm from '../views/forms/LoginForm'
 
 const Faculty = () => {
   return (
-    <div>Faculty</div>
+    <div><LoginForm /></div>
   )
 }
 

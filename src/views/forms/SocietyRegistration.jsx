@@ -5,6 +5,7 @@ const SocietyRegistration = () => {
     const [userRegistration, setuserRegistration] = useState({
         name: '',
         rollNumber: '',
+        email: '',
         department: '',
         semester: '',
         hobbies: '',
@@ -22,6 +23,7 @@ const SocietyRegistration = () => {
         setuserRegistration({
             name: '',
             rollNumber: '',
+            email: '',
             department: '',
             semester: '',
             hobbies: '',
@@ -42,6 +44,12 @@ const SocietyRegistration = () => {
                     <label htmlFor="floatingInput">Roll Number</label>
                 </div>
                 {/* roll no end */}
+                {/* email start */}
+                <div className="form-floating mb-3 mx-5">
+                    <input type="email" name="email" className="form-control" id="floatingInput email" placeholder="abc@gmail.com" value={userRegistration.email} onChange={HandleInput} />
+                    <label htmlFor="floatingInput">Email</label>
+                </div>
+                {/* email end */}
                 {/* Department start */}
                 <div className="form-floating mb-3 mx-5">
                     <input type="text" name="department" className="form-control" id="floatingInput department" placeholder="F00" value={userRegistration.department} onChange={HandleInput} />
@@ -74,6 +82,7 @@ const SocietyRegistration = () => {
                             <div key={curElem.id} className={forms.ShowData}>
                                 <p>{curElem.name}</p>
                                 <p>{curElem.rollNumber}</p>
+                                <p>{curElem.email}</p>
                                 <p>{curElem.department}</p>
                                 <p>{curElem.semester}</p>
                                 <p>{curElem.hobbies}</p>

@@ -2,13 +2,17 @@ import React from 'react'
 import { useState } from "react"
 import "../../App.css"
 import axios from 'axios'
+import { useToast } from '@chakra-ui/react'
 
 const NewStudent = () => {
   // state variables
+  const toast = useToast()
+
   const [newStudent, setNewStudent] = useState({
     name: '',
     cnic: '',
     email: '',
+    password: '',
     rollNumber: '',
     batchNumber: '',
     shift: '',
@@ -25,8 +29,8 @@ const NewStudent = () => {
     setNewStudent({ ...newStudent, [name]: value });
   }
 
-  // function to s=handle submit form
-  const HandleSubmit = async(e) => {
+  // function to handle submit form
+  const HandleSubmit = async (e) => {
     e.preventDefault();
     // Generate subjects array based on subjectNumbers
     const subjects = [];
@@ -45,6 +49,7 @@ const NewStudent = () => {
       name: '',
       cnic: '',
       email: '',
+      password: '',
       rollNumber: '',
       batchNumber: '',
       shift: '',
@@ -55,6 +60,22 @@ const NewStudent = () => {
     console.log(newStudent)
     const response = await axios.post(`http://localhost:3000/api/v1/add-student`, newStudent)
     console.log(response)
+    if (response.data.success) {
+      toast({
+        title: 'Student added successfully',
+        description: "Student successfully added to DataBase",
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+    } else {
+      toast({
+        title: "couldn't add student",
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      })
+    }
   }
   return (
     <>
@@ -78,6 +99,12 @@ const NewStudent = () => {
             <label htmlFor="floatingInput">Email address</label>
           </div>
           {/* email end */}
+          {/* password start */}
+          <div className="form-floating mb-3 mx-5">
+            <input type="password" name="password" className="form-control" id="floatingInput password" placeholder="****" value={newStudent.password} onChange={HandleInput} />
+            <label htmlFor="floatingInput">Password</label>
+          </div>
+          {/* password end */}
           {/* roll no start */}
           <div className="form-floating mb-3 mx-5">
             <input type="text" name="rollNumber" className="form-control" id="floatingInput rollNumber" placeholder="bcsf00m000" value={newStudent.rollNumber} onChange={HandleInput} />
@@ -141,33 +168,6 @@ const NewStudent = () => {
           </div>
           {/* submit button end */}
         </form>
-      </div>
-      {/* showing inputs on browser window */}
-      <div>
-        {
-          records.map((curElem) => {
-            return (
-              <div key={curElem.id} className='show-student-data'>
-                <div className='mx-5 my-5'>
-                  <p>{curElem.name}</p>
-                  <p>{curElem.cnic}</p>
-                  <p>{curElem.email}</p>
-                  <p>{curElem.rollNumber}</p>
-                  <p>{curElem.batchNumber}</p>
-                  <p>{curElem.shift}</p>
-                  <p>{curElem.semester}</p>
-                  <p>{curElem.subjectNumbers}</p>
-                  <p>Subjects:</p>
-                  <ul>
-                    {curElem.subjects.map((subject) => (
-                      <li key={subject.subjectId}>{subject.subjectName}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            )
-          })
-        }
       </div>
     </>
   )

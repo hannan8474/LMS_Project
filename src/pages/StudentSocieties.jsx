@@ -17,10 +17,10 @@ const StudentSocieties = () => {
           <Link to="/media-society"><img src={media} alt="Title Image" className="society-images"/></Link>
         </div>
         <div className="society my-3">
-          <Link to="/"><img src={sports} alt="Title Image" className="society-images"/></Link>
+          <Link to="/sports-society"><img src={sports} alt="Title Image" className="society-images"/></Link>
         </div>
         <div className="society my-3">
-          <Link to="/"><img src={literary} alt="Title Image" className="society-images"/></Link>
+          <Link to="/literary-society"><img src={literary} alt="Title Image" className="society-images"/></Link>
         </div>
         <div className="society my-3">
           <Link to="/"><img src={event} alt="Title Image" className="society-images"/></Link>
