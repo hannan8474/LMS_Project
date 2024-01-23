@@ -57,12 +57,10 @@ const NewStudent = () => {
       subjectNumbers: '',
       subjects: [],
     });
-    console.log(newStudent)
     const response = await axios.post(`http://localhost:3000/api/v1/add-student`, newStudent)
-    console.log(response)
     if (response.data.success) {
       toast({
-        title: 'Student added successfully',
+        title: 'Submitted',
         description: "Student successfully added to DataBase",
         status: 'success',
         duration: 9000,
@@ -70,7 +68,8 @@ const NewStudent = () => {
       })
     } else {
       toast({
-        title: "couldn't add student",
+        title: 'Error',
+        description: 'Please fill all the fields properly',
         status: 'error',
         duration: 9000,
         isClosable: true,

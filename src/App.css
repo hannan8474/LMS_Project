@@ -13,12 +13,14 @@
     background-color: rgb(0, 0, 0, 0.1);
     text-align: center;
 }
+
 .intro {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
 .names {
     text-align: center;
     margin-top: 5px;
@@ -94,13 +96,16 @@
     padding-top: 7px;
     padding-left: 130px;
 }
+
 .icon {
     margin: 0 10px;
 }
+
 .copyright {
     padding: 20px 0 0 7px;
     font-weight: bold;
 }
+
 .societies-container {
     display: grid;
     grid-template-columns: auto auto auto;
@@ -112,6 +117,7 @@
 .society-images {
     height: 200px;
 }
+
 .top-title {
     background-image: url("./assets/Images/favicon_io/IMG_0907.jpg");
     height: 50vh;
@@ -119,42 +125,56 @@
     justify-content: center;
     align-items: center;
 }
+
 .society-names {
     font-size: 300%;
     color: black !important;
 }
+
 a:hover {
     font-weight: bolder;
 }
+
 .society-body {
     display: grid;
     grid-template-columns: 25% 50% 25%;
     margin: 10px 5px 10px 5px;
 }
+
 .society-content {
     border-right: 2px solid black;
     border-left: 2px solid black;
 }
+
 .society-registration {
     margin: 20px 0;
 }
-table, td, th {
+
+table,
+td,
+th {
     border: 2px solid black;
 }
+
 table {
     text-align: center;
     width: 100%;
     border-collapse: collapse;
 }
-th, td {
+
+th,
+td {
     padding: 10px;
 }
+
 .student-content {
     margin: 10px;
 }
+
 th {
     background-color: rgba(47, 157, 198, 1);
 }
+
 .background-opacity {
     background-color: rgba(47, 157, 198, 1);
     opacity: 0.5;
@@ -163,4 +183,8 @@ th {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.individual-letter {
+    border-right: 4px solid #000;
 }

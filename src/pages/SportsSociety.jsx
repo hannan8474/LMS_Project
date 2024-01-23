@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import "../App.css"
 import arif from "../assets/Images/favicon_io/arif.png"
@@ -21,11 +21,24 @@ const SportsSociety = () => {
     const HandleBack = () => {
         setButtonClicked(false);
     }
+    const [charIndex, setCharIndex] = useState(0);
+    let text = "FCIT Sports Society"
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCharIndex((prevIndex) => (prevIndex < text.length ? prevIndex + 1 : 0));
+        }, 100); // Adjust the delay between revealing each letter
+
+        return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+    }, [text]);
     return (
         <>
             <div className="top-title">
                 <div className="background-opacity">
-                    <h2 className='society-names py-3'>FCIT Sports Society</h2>
+                    <h2 className='society-names py-3'>
+                        <div className="animated-line">
+                            <span className="individual-letter">{text.slice(0, charIndex)}</span>
+                        </div>
+                    </h2>
                 </div>
             </div>
             <div className="society-body">

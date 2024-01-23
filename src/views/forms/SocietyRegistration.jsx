@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import "../../App.css"
+import { useToast } from '@chakra-ui/react'
 
 const SocietyRegistration = () => {
+    // useToast start
+    const toast = useToast()
+    // useToast end
+    // useState Hook start
     const [userRegistration, setuserRegistration] = useState({
         name: '',
         rollNumber: '',
@@ -9,14 +15,21 @@ const SocietyRegistration = () => {
         department: '',
         semester: '',
         hobbies: '',
+        aboutYourself: '',
     });
+    // useState Hook end
+    // handlInput start
     const HandleInput = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         setuserRegistration({ ...userRegistration, [name]: value });
     }
+    // handlInput end
+    // useState Hook start
     const [records, setrecords] = useState([]);
-    const HandleSubmit = (e) => {
+    // useState Hook end
+    // handleSubmit start
+    const HandleSubmit = async (e) => {
         e.preventDefault();
         const NewRecord = { ...userRegistration, id: new Date().getTime().toString() };
         setrecords([...records, NewRecord]);
@@ -27,8 +40,28 @@ const SocietyRegistration = () => {
             department: '',
             semester: '',
             hobbies: '',
+            aboutYourself: '',
         });
+        const response = await axios.post(`http://localhost:3000/api/v1/society-registration-student`, userRegistration)
+        if (response.data.success) {
+            toast({
+                title: 'Submitted',
+                description: 'Your form is submitted successfully. Your registration will be confirmed soon',
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            })
+        } else {
+            toast({
+                title: 'Error',
+                description: 'Please fill all the fields properly',
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
+        }
     }
+    // handleSubmit end
     return (
         <>
             <form action="" onSubmit={HandleSubmit} className='new-student-form'>
@@ -68,29 +101,18 @@ const SocietyRegistration = () => {
                     <label htmlFor="floatingInput">Hobbies</label>
                 </div>
                 {/* Hobbies end */}
+                {/* About Yourself start */}
+                <div className="form-floating mb-3 mx-5">
+                    <textarea name="aboutYourself" className="form-control" id="floatingInput hobbies" cols="30" rows="10" placeholder="About Yourself" value={userRegistration.aboutYourself} onChange={HandleInput}></textarea>
+                    <label htmlFor="floatingInput">Why should we consider you?</label>
+                </div>
+                {/* About Yourself end */}
                 {/* submit button start */}
                 <div className="form-floating mb-3 mx-5">
                     <button type="submit" className='button-styling'>Register Now</button>
                 </div>
                 {/* submit button end */}
             </form>
-            {/* Shows the form entries */}
-            <div>
-                {
-                    records.map((curElem) => {
-                        return (
-                            <div key={curElem.id} className={forms.ShowData}>
-                                <p>{curElem.name}</p>
-                                <p>{curElem.rollNumber}</p>
-                                <p>{curElem.email}</p>
-                                <p>{curElem.department}</p>
-                                <p>{curElem.semester}</p>
-                                <p>{curElem.hobbies}</p>
-                            </div>
-                        )
-                    })
-                }
-            </div>
         </>
     )
 }

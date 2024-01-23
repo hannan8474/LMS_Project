@@ -14,7 +14,6 @@ const EnrolledStudents = () => {
         } catch (error) {
             // Log any errors that occur during the fetch
             console.log(error)
-            console.log("Error")
         }
 
     }
