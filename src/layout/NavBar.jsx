@@ -24,17 +24,14 @@ const NavBar = () => {
                                     Departments
                                 </NavLink>
                                 <ul className="dropdown-menu">
-                                    <li><NavLink className="dropdown-item" to="/department/computer-science">Computer Science</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="/department/software-Engineering">Software Engineering</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="/department/information-technology">Information Technology</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="/department/data-science">Data Science</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/computer-science">Computer Science</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/software-Engineering">Software Engineering</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/information-technology">Information Technology</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/data-science">Data Science</NavLink></li>
                                 </ul>
                             </li>
                             <li className="nav-item px-3 mx-3">
                                 <NavLink className="nav-link" to="/student-societies">Student Societies</NavLink>
-                            </li>
-                            <li className="nav-item px-3 mx-3">
-                                <NavLink className="nav-link" to="/faculty">Faculty</NavLink>
                             </li>
                             <li className="nav-item px-3 mx-3">
                                 <NavLink className="nav-link" to="/student-portal">Student Portal</NavLink>

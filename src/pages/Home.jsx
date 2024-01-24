@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/modal'
 import chairmanCS from "../assets/Images/favicon_io/chairman.gif"
 import chairmanDS from "../assets/Images/favicon_io/DDS_DrShahid.jpg"
@@ -10,6 +11,8 @@ import DeanIntro from '../components/commons/DeanIntro'
 import ChairmanseIntro from '../components/commons/ChairmanseIntro'
 import ChairmanitIntro from '../components/commons/ChairmanitIntro'
 import ChairmandsIntro from '../components/commons/ChairmandsIntro'
+import Fcit from '../components/commons/Fcit'
+import departmentImage from "../assets/Images/favicon_io/logo-2.png"
 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,10 +26,17 @@ const Home = () => {
       setIsOpen(false);
     };
   }, []);
-  const contentStyle = {
-    color: "grey",
-    display: "inline-block",
-  }
+
+  const [charIndex, setCharIndex] = useState(0);
+  let text = "FACULTY OF COMPUTING AND INFORMATION TECHNOLOGY(FCIT)"
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCharIndex((prevIndex) => (prevIndex < text.length ? prevIndex + 1 : 0));
+    }, 100); // Adjust the delay between revealing each letter
+
+    return () => clearInterval(intervalId); // Cleanup the interval on component unmount
+  }, [text]);
+
   const announcement = {
     color: "red",
   }
@@ -50,43 +60,96 @@ const Home = () => {
         </ModalContent>
       </Modal>
       {/* Modal Dialog Ends */}
-      <h2 className='top-heading py-3'>Dean and chairperson's messages</h2>
-      <div className='messages m-5'>
-        <div className='dean-message my-4'>
-          <div className="intro">
-            <img src={chairmanCS} alt="chairman" className="chairman-images" />
-            <p className='names'><b>Dr Shahzad Sarwar</b></p>
-            <p style={contentStyle}>Dean FCIT<br />Chairman Department of Computer Science<br />Email:dean.fcit@pucit.edu.pk</p>
+      <div className="main-container">
+        <div className="right-section">
+          <div className="fcit-info">
+            <div className="animated-line">
+              <h2 className="top-heading py-3"><span className="individual-letter">{text.slice(0, charIndex)}</span></h2>
+            </div>
+            <div>
+              <Fcit />
+            </div>
           </div>
-          <DeanIntro />
-        </div>
-        <hr />
-        <div className='dean-message my-4'>
-          <div className="intro">
-            <img src={chairmanSE} alt="chairman" className="chairman-images" />
-            <p className='names'><b>Dr Muhammad Murtaza Yousaf</b></p>
-            <p style={contentStyle}>Chairman Department of Software Engineering<br />Email:chairman.dse@pucit.edu.pk</p>
+          <div className="messages">
+            <h2 className='top-heading py-3'>Dean and chairperson's messages</h2>
+            <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div className="carousel-inner">
+                <div className="carousel-item active" data-bs-interval="3000">
+                  <div className='dean-message my-4'>
+                    <div className="intro">
+                      <img src={chairmanCS} alt="chairman" className="chairman-images" />
+                      <p className='names'>
+                        <b>Dr Shahzad Sarwar</b> <br />
+                        Dean FCIT<br />Chairman Department of Computer Science<br />Email:dean.fcit@pucit.edu.pk
+                      </p>
+
+                    </div>
+                    <DeanIntro />
+                  </div>
+                </div>
+                <div className="carousel-item" data-bs-interval="3000">
+                  <div className='dean-message my-4'>
+                    <div className="intro">
+                      <img src={chairmanSE} alt="chairman" className="chairman-images" />
+                      <p className='names'><b>Dr Muhammad Murtaza Yousaf</b><br />Chairman Department of Software Engineering<br />Email:chairman.dse@pucit.edu.pk</p>
+                    </div>
+                    <ChairmanseIntro />
+                  </div>
+                </div>
+                <div className="carousel-item" data-bs-interval="3000">
+                  <div className='dean-message my-4'>
+                    <div className="intro">
+                      <img src={chairmanIT} alt="chairmanIT" className="chairman-images" />
+                      <p className='names'><b>Dr Syed Waqar ul Quonain</b><br />Chairman Department of Information Technology<br />Email:chairman.dit@pucit.edu.pk</p>
+                    </div>
+                    <ChairmanitIntro />
+                  </div>
+                </div>
+                <div className="carousel-item" data-bs-interval="3000">
+                  <div className='dean-message my-4'>
+                    <div className="intro">
+                      <img src={chairmanDS} alt="chairmanDS" className="chairman-images" />
+                      <p className='names'><b>Dr Shahid Manzoor</b><br />Chairman Department of Data Science<br />Email:chairman.dds@pucit.edu.pk</p>
+                    </div>
+                    <ChairmandsIntro />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <ChairmanseIntro />
-        </div>
-        <hr />
-        <div className='dean-message my-4'>
-          <div className="intro">
-            <img src={chairmanIT} alt="chairmanIT" className="chairman-images" />
-            <p className='names'><b>Dr Syed Waqar ul Quonain</b></p>
-            <p style={contentStyle}>Chairman Department of Information Technology<br />Email:chairman.dit@pucit.edu.pk</p>
+          <div className="department-links">
+
+            <div className="department-logo-link cs">
+              <figure>
+                <img src={departmentImage} alt="Department Image" />
+                <figcaption>Department of Computer Science</figcaption>
+              </figure>
+              <button className="button-styling"><Link to="/computer-science">Read More</Link></button>
+            </div>
+            <div className="department-logo-link se">
+              <figure>
+                <img src={departmentImage} alt="Department Image" />
+                <figcaption>Department of Software Engineering</figcaption>
+              </figure>
+              <button className="button-styling"><Link to="/software-engineering">Read More</Link></button>
+            </div>
+            <div className="department-logo-link it">
+              <figure>
+                <img src={departmentImage} alt="Department Image" />
+                <figcaption>Department of Information Technology</figcaption>
+              </figure>
+              <button className="button-styling"><Link to="/information-technology">Read More</Link></button>
+            </div>
+            <div className="department-logo-link ds">
+              <figure>
+                <img src={departmentImage} alt="Department Image" />
+                <figcaption>Department of Data Science</figcaption>
+              </figure>
+              <button className="button-styling"><Link to="/data-science">Read More</Link></button>
+            </div>
           </div>
-          <ChairmanitIntro />
         </div>
-        <hr />
-        <div className='dean-message my-4'>
-          <div className="intro">
-            <img src={chairmanDS} alt="chairmanDS" className="chairman-images" />
-            <p className='names'><b>Dr Shahid Manzoor</b></p>
-            <p style={contentStyle}>Chairman Department of Data Science<br />Email:chairman.dds@pucit.edu.pk</p>
-          </div>
-          <ChairmandsIntro />
-        </div>
+        <div className="notice-board"><h2 className='top-heading py-3'><span className="notice-color">Notice Board</span></h2></div>
       </div>
     </>
   )
