@@ -149,7 +149,23 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <div className="notice-board"><h2 className='top-heading py-3'><span className="notice-color">Notice Board</span></h2></div>
+        <div className="notice-board">
+          <div className="top-heading-notice">
+            <h2 className='top-heading py-3'>
+              <span className="notice-color">Notice Board</span>
+            </h2>
+          </div>
+          <div className="recent-updates">
+            <ul>
+              <li>Time Table of BS (CS, SE, IT,DS ) Fall 2023. (3rd & 5th Semester) & BS (CS, SE, IT,DS ) Spring 2024 (2nd & 8th Semester) <b>January 21, 2024</b></li>
+              <li>Public Defense and Viva Voce Examination of PhD Student <b>January 15, 2024</b></li>
+              <li>Public Defense and Viva Voce Examination of PhD Student (Rescheduled) <b>January 15, 2024</b></li>
+              <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, numquam.</li>
+              <li>Lorem ipsum dolor sit amet consectetur.</li>
+              <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam enim quas officia dignissimos ad!</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </>
   )

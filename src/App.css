@@ -3,14 +3,19 @@
     color: rgba(47, 157, 198, 1);
     text-align: center;
 }
+
 @keyframes revealText {
-    0%, 100% {
+
+    0%,
+    100% {
         opacity: 1;
     }
+
     50% {
         opacity: 0.2;
     }
 }
+
 .notice-color {
     color: red;
     animation: revealText 2s infinite;
@@ -19,20 +24,45 @@
 .department-links {
     display: flex;
     flex-direction: row;
+    padding: 20px 10px;
 }
 
+.chairman-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.faculty-members {
+    display: grid;
+    grid-template-columns: 20% auto;
+    padding: 20px 40px;
+}
 figcaption {
     color: #0b59b7;
     font-size: 110%;
     font-weight: bold;
 }
 
+.degree-objectives {
+    padding: 30px;
+}
+.qualifications {
+    padding-left: 30px;
+}
+.no-background {
+    background-color: white !important;
+}
+
 .department-logo-link {
     padding: 10px 50px;
 }
-.cs, .se, .it {
+
+.cs,
+.se,
+.it {
     border-right: 2px solid black;
 }
+
 .institute-info {
     padding: 10px;
 }
@@ -41,6 +71,7 @@ figcaption {
     display: grid;
     grid-template-columns: 75% 25%;
 }
+
 .notice-board {
     border-left: 2px solid rgba(0, 0, 0, 0.321);
 }
