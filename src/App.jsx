@@ -17,8 +17,12 @@ import SocietyRegistration from './views/forms/SocietyRegistration'
 import EnrolledStudents from './pages/EnrolledStudents'
 import SportsSociety from './pages/SportsSociety'
 import LiterarySociety from './pages/LiterarySociety'
+import Fcit from './components/commons/Fcit'
 
 function App() {
+  const funaces = (a) => {
+
+  }
   return (
     <>
       <NavBar />
@@ -31,6 +35,7 @@ function App() {
         <Route path='/data-science' element={<DataScience />} />
         <Route path='/student-portal' element={<StudentPortal />} />
         <Route path='/student-societies' element={<StudentSocieties />} />
+        <Route path='/fcit-information' element={<Fcit />}/>
         <Route path='/media-society' element={<MediaSociety />}>
           <Route path='society-registration' element={<SocietyRegistration />} />
         </Route>

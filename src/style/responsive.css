@@ -1,46 +1,83 @@
 @media screen and (max-width: 768px) {
+    body {
+        font-size: 50%;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
     .dean-message {
         display: flex;
         flex-direction: column;
     }
-    .intro img{
+
+    .intro img {
         width: 50%;
     }
+
+    .message {
+        border-top: 2px solid black;
+        border-left: none !important;
+    }
+
+    .department-links {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cs,
+    .se,
+    .it {
+        border: none !important;
+    }
+
     .footer {
         display: flex;
         flex-direction: column-reverse;
         text-align: center;
     }
+
     .icons {
         padding-left: 0;
     }
+
     .navbar-brand img {
         height: 50px !important;
     }
+
     .society-body {
         display: flex;
         flex-direction: column;
     }
-    .patron-info img{
-        height: 25%;
+    .patron-info img {
+        height: 100px;
+        width: 100px;
     }
     .patron-info {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        padding: 2% 6%;
     }
+
     .patrons {
         display: flex;
-        flex-direction: column;
-        padding: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
+
     .society-content {
         padding: 10px 0;
         border-left: 0;
         border-right: 0;
-        border-bottom: 2px  solid black;
+        border-bottom: 2px solid black;
         border-top: 2px solid black;
     }
+
     .contact {
-        padding: 10px 0; 
+        padding: 10px 0;
     }
 }

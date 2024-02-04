@@ -11,7 +11,6 @@ import DeanIntro from '../components/commons/DeanIntro'
 import ChairmanseIntro from '../components/commons/ChairmanseIntro'
 import ChairmanitIntro from '../components/commons/ChairmanitIntro'
 import ChairmandsIntro from '../components/commons/ChairmandsIntro'
-import Fcit from '../components/commons/Fcit'
 import departmentImage from "../assets/Images/favicon_io/logo-2.png"
 
 const Home = () => {
@@ -67,7 +66,11 @@ const Home = () => {
               <h2 className="top-heading py-3"><span className="individual-letter">{text.slice(0, charIndex)}</span></h2>
             </div>
             <div>
-              <Fcit />
+            <p  className='institute-info'>
+                <i>
+                    "Faculty of Computing & Information Technology was established on January, 2021. Faculty comprised of Department of Computer Science, Department of Software Engineer, Department of Information Technology and Department of Data Science.... <Link to="/fcit-information"><button className='text-primary'>Read More</button></Link>
+                </i>
+            </p>
             </div>
           </div>
           <div className="messages">
@@ -118,34 +121,33 @@ const Home = () => {
             </div>
           </div>
           <div className="department-links">
-
-            <div className="department-logo-link cs">
+            <div className="department-logo-link cs py-1 px-4">
               <figure>
                 <img src={departmentImage} alt="Department Image" />
                 <figcaption>Department of Computer Science</figcaption>
               </figure>
-              <button className="button-styling"><Link to="/computer-science">Read More</Link></button>
+              <Link to="/computer-science"><button className='button-styling'>Read More</button></Link>
             </div>
-            <div className="department-logo-link se">
+            <div className="department-logo-link se py-1 px-4">
               <figure>
                 <img src={departmentImage} alt="Department Image" />
                 <figcaption>Department of Software Engineering</figcaption>
               </figure>
-              <button className="button-styling"><Link to="/software-engineering">Read More</Link></button>
+              <Link to="/software-engineering"><button className='button-styling'>Read More</button></Link>
             </div>
-            <div className="department-logo-link it">
+            <div className="department-logo-link it py-1 px-4">
               <figure>
                 <img src={departmentImage} alt="Department Image" />
                 <figcaption>Department of Information Technology</figcaption>
               </figure>
-              <button className="button-styling"><Link to="/information-technology">Read More</Link></button>
+              <Link to="/information-technology"><button className='button-styling'>Read More</button></Link>
             </div>
-            <div className="department-logo-link ds">
+            <div className="department-logo-link ds py-1 px-4">
               <figure>
                 <img src={departmentImage} alt="Department Image" />
                 <figcaption>Department of Data Science</figcaption>
               </figure>
-              <button className="button-styling"><Link to="/data-science">Read More</Link></button>
+              <Link to="/data-science"><button className='button-styling'>Read More</button></Link>
             </div>
           </div>
         </div>
