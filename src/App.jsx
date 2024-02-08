@@ -2,7 +2,6 @@ import React from 'react'
 import './App.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Department from './pages/Department'
 import InformationTechnology from "./pages/InformationTechnology"
 import SoftwareEngineering from "./pages/SoftwareEngineering"
 import ComputerScience from "./pages/ComputerScience"
@@ -14,28 +13,28 @@ import NavBar from './layout/NavBar'
 import Footer from "./layout/Footer"
 import MediaSociety from './pages/MediaSociety'
 import SocietyRegistration from './views/forms/SocietyRegistration'
-import EnrolledStudents from './pages/EnrolledStudents'
 import SportsSociety from './pages/SportsSociety'
 import LiterarySociety from './pages/LiterarySociety'
 import Fcit from './components/commons/Fcit'
+import AdminSignup from './views/forms/AdminSignup'
+import LoginForm from './views/forms/LoginForm'
+import AdminLoginForm from './views/forms/AdminLoginForm'
+import NewStudent from './views/forms/NewStudent'
+
 
 function App() {
-  const funaces = (a) => {
 
-  }
   return (
     <>
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/department' element={<Department />} />
         <Route path='/computer-science' element={<ComputerScience />} />
         <Route path='/software-engineering' element={<SoftwareEngineering />} />
         <Route path='/information-technology' element={<InformationTechnology />} />
         <Route path='/data-science' element={<DataScience />} />
-        <Route path='/student-portal' element={<StudentPortal />} />
         <Route path='/student-societies' element={<StudentSocieties />} />
-        <Route path='/fcit-information' element={<Fcit />}/>
+        <Route path='/fcit-information' element={<Fcit />} />
         <Route path='/media-society' element={<MediaSociety />}>
           <Route path='society-registration' element={<SocietyRegistration />} />
         </Route>
@@ -45,7 +44,11 @@ function App() {
         <Route path='/literary-society' element={<LiterarySociety />}>
           <Route path='society-registration' element={<SocietyRegistration />} />
         </Route>
-        <Route path='/enrolled-students' element={<EnrolledStudents />} />
+        <Route path='/auth/sign-up' element={<AdminSignup />} />
+        <Route path='/student-portal' element={<StudentPortal />} />
+        <Route path='/auth/admin-login' element={<AdminLoginForm />} />
+        <Route path='/auth/student-login' element={<LoginForm />} />
+        <Route path="/add-student" element={<NewStudent />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>
       <Footer />

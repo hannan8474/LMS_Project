@@ -1,0 +1,22 @@
+.student-content {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.data-student-list, .data-student {
+    list-style: none;
+    margin-left: 10px;
+    border-bottom: 2px solid black;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+}
+
+.individual-data-entries {
+    display: flex;
+    flex-direction: row;
+    font-size: 120%;
+}
+

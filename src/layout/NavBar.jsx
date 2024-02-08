@@ -1,16 +1,17 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
 import logo from "../assets/Images/favicon_io/logo-new.png"
-import "../style/modifyNavBar.css"
-import "../style/modifyNavBar.css"
+import "../style/navBar.css"
+
 // how to write modular css in react js
 
 const NavBar = () => {
     return (
         <>
+            <div className="header">
             <nav className="navbar navbar-expand-lg bg-body-tertiary bg-dark">
                 <div className="container-fluid">
-                    <NavLink className="navbar-brand" to="/"><img src={logo} alt="Fcit_Logo"/></NavLink>
+                    <NavLink className="navbar-brand" to="/"><img src={logo} alt="Fcit_Logo" className='image-footer'/></NavLink>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
@@ -34,15 +35,13 @@ const NavBar = () => {
                                 <NavLink className="nav-link" to="/student-societies">Student Societies</NavLink>
                             </li>
                             <li className="nav-item px-3 mx-3">
-                                <NavLink className="nav-link" to="/student-portal">Student Portal</NavLink>
-                            </li>
-                            <li className="nav-item px-3 mx-3">
-                                <NavLink className="nav-link" to="/enrolled-students">Enrolled Students</NavLink>
+                                <NavLink className="nav-link" to="/auth/student-login">Student Portal</NavLink>
                             </li>
                         </ul>
                     </div>
                 </div>
             </nav>
+            </div>
         </>
 
     )

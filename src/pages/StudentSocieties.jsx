@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import "../style/societies.css"
+import "../App.css"
 import media from "../assets/Images/favicon_io/mediasocities.jpg"
 import sports from "../assets/Images/favicon_io/sports.jpg"
 import literary from "../assets/Images/favicon_io/ls.jpg"

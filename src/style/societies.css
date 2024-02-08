@@ -1,0 +1,28 @@
+.top-title {
+    background-image: url("../assets/Images/favicon_io/IMG_0907.jpg");
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.societies-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    width: 60%;
+    margin: 50px 0 50px 300px;
+}
+
+.background-opacity {
+    background-color: rgb(138, 205, 205);
+    opacity: 0.5;
+    width: 98%;
+    height: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel {
+    margin-left: 310px;
+}

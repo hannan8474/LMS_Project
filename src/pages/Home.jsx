@@ -5,7 +5,9 @@ import chairmanCS from "../assets/Images/favicon_io/chairman.gif"
 import chairmanDS from "../assets/Images/favicon_io/DDS_DrShahid.jpg"
 import chairmanSE from "../assets/Images/favicon_io/murtaza.jpg"
 import chairmanIT from "../assets/Images/favicon_io/swjaffry.jpg"
+import homevideo from "../assets/Images/favicon_io/homevideo.mp4"
 import "../App.css"
+import "../style/home.css"
 import "../style/responsive.css"
 import DeanIntro from '../components/commons/DeanIntro'
 import ChairmanseIntro from '../components/commons/ChairmanseIntro'
@@ -31,7 +33,7 @@ const Home = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCharIndex((prevIndex) => (prevIndex < text.length ? prevIndex + 1 : 0));
-    }, 100); // Adjust the delay between revealing each letter
+    }, 100); // After every 100 milliseconds charIndex state gets incremented by 1 and string got sliced from (0, charIndex)
 
     return () => clearInterval(intervalId); // Cleanup the interval on component unmount
   }, [text]);
@@ -59,20 +61,44 @@ const Home = () => {
         </ModalContent>
       </Modal>
       {/* Modal Dialog Ends */}
+      {/* Video and ovelaying text starts */}
+      <div className="introductory-words">
+        <div className="words">
+          <h2 className='words'>GET READY</h2>
+          <h2 className='words-smaller'> TO IGNITE YOUR TRUE POTENTIAL</h2>
+        </div>
+      </div>
+      <div className='introductory-video'>
+        <video src={homevideo} autoPlay loop muted className='video'>
+        </video>
+      </div>
+      {/* Video and overlaying text ends */}
+      {/* Fcit little praise starts */}
+      <div className="inspiration">
+        <h2 className='inspiration-heading'>
+          FCIT Empowers me to be
+        </h2>
+        <p className="inspiration-words">At FCIT, you’ll get personalized support from start to finish. You’ll cultivate the skills you need for success. And you’ll develop the confidence that will get you ready to thrive as a person and a professional. Here, you’ll find a welcoming, diverse community inspired by our Catholic Franciscan heritage that values you for who you are and who you want to become.</p>
+      </div>
+      {/* Fcit little praise ends */}
       <div className="main-container">
         <div className="right-section">
           <div className="fcit-info">
+            {/* Showing animated line starts */}
             <div className="animated-line">
               <h2 className="top-heading py-3"><span className="individual-letter">{text.slice(0, charIndex)}</span></h2>
             </div>
+            {/* showing animated line ends */}
+            {/* Introduction about FCIT starts */}
             <div>
-            <p  className='institute-info'>
+              <p className='institute-info'>
                 <i>
-                    "Faculty of Computing & Information Technology was established on January, 2021. Faculty comprised of Department of Computer Science, Department of Software Engineer, Department of Information Technology and Department of Data Science.... <Link to="/fcit-information"><button className='text-primary'>Read More</button></Link>
+                  "Faculty of Computing & Information Technology was established on January, 2021. Faculty comprised of Department of Computer Science, Department of Software Engineer, Department of Information Technology and Department of Data Science.... <Link to="/fcit-information"><button className='text-primary'>Read More</button></Link>
                 </i>
-            </p>
+              </p>
             </div>
           </div>
+          {/* Messages from chairman starts */}
           <div className="messages">
             <h2 className='top-heading py-3'>Dean and chairperson's messages</h2>
             <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -120,37 +146,49 @@ const Home = () => {
               </div>
             </div>
           </div>
+          {/* Messages from chairmen ends */}
+          {/* Department cards starts */}
           <div className="department-links">
-            <div className="department-logo-link cs py-1 px-4">
-              <figure>
-                <img src={departmentImage} alt="Department Image" />
-                <figcaption>Department of Computer Science</figcaption>
-              </figure>
-              <Link to="/computer-science"><button className='button-styling'>Read More</button></Link>
+            <div className="card card-1">
+              <div className="card-img">
+                <img src={departmentImage} className="card-img-top" alt="Computer Science" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title">Department of Computer Science</h5>
+                <button className="button-styling"><Link to="/computer-science" >Go there</Link></button>
+              </div>
             </div>
-            <div className="department-logo-link se py-1 px-4">
-              <figure>
-                <img src={departmentImage} alt="Department Image" />
-                <figcaption>Department of Software Engineering</figcaption>
-              </figure>
-              <Link to="/software-engineering"><button className='button-styling'>Read More</button></Link>
+            <div className="card card-2">
+              <div className="card-img">
+                <img src={departmentImage} className="card-img-top" alt="Software Engineering" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title">Department of Software Engineering</h5>
+                <button className="button-styling"><Link to="/software-enginerring" >Go there</Link></button>
+              </div>
             </div>
-            <div className="department-logo-link it py-1 px-4">
-              <figure>
-                <img src={departmentImage} alt="Department Image" />
-                <figcaption>Department of Information Technology</figcaption>
-              </figure>
-              <Link to="/information-technology"><button className='button-styling'>Read More</button></Link>
+            <div className="card card-3">
+              <div className="card-img">
+                <img src={departmentImage} className="card-img-top" alt="Information Technology" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title">Department of Information Technology</h5>
+                <button className="button-styling"><Link to="/information-technology" >Go there</Link></button>
+              </div>
             </div>
-            <div className="department-logo-link ds py-1 px-4">
-              <figure>
-                <img src={departmentImage} alt="Department Image" />
-                <figcaption>Department of Data Science</figcaption>
-              </figure>
-              <Link to="/data-science"><button className='button-styling'>Read More</button></Link>
+            <div className="card card-4">
+              <div className="card-img">
+                <img src={departmentImage} className="card-img-top" alt="Data Science" />
+              </div>
+              <div className="card-body">
+                <h5 className="card-title">Department of Data Science</h5>
+                <button className="button-styling"><Link to="/data-science" >Go there</Link></button>
+              </div>
             </div>
+            {/* Department cards ends */}
           </div>
         </div>
+        {/* Notice board starts */}
         <div className="notice-board">
           <div className="top-heading-notice">
             <h2 className='top-heading py-3'>
@@ -169,6 +207,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* Notice board ends */}
     </>
   )
 }

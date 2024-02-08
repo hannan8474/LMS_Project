@@ -1,0 +1,162 @@
+@keyframes revealText {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.2;
+    }
+}
+
+.notice-color {
+    color: red;
+    animation: revealText 2s infinite;
+}
+.card-img-top {
+    height: 150px;
+    width: 100px;
+}
+
+.card-img {
+    display: flex;
+    justify-content: center;
+}
+
+.introductory-video {
+    z-index: 1;
+    position: relative;
+    top: 0;
+}
+.words {
+    font-size: 300%;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+.inspiration {
+    background-color:  #0d4877;
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.inspiration-heading {
+    color: white;
+    font-size: 300%;
+    width: 50%;
+    text-align: center;
+}
+.inspiration-words {
+    width: 50%;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 4%;
+}
+.introductory-words {
+    z-index: 2;
+    position: absolute;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video {
+    height: 100%;
+    width: 100%;
+}
+
+.department-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2% 1%;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes revealCard {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+}
+
+.card-1 {
+    margin: 0 5%;
+    height: 300px;
+    width: 300px;
+    animation: revealCard 1s ease-in forwards;
+}
+
+.card-2 {
+    margin: 0 5%;
+    width: 300px;
+    height: 300px;
+    animation: revealCard 1.5s ease-in forwards;
+}
+
+.card-3 {
+    margin: 0 5%;
+    width: 300px;
+    height: 300px;
+    animation: revealCard 2s ease-in forwards;
+}
+
+.card-4 {
+    margin: 3% 5%;
+    width: 300px;
+    height: 300px;
+    animation: revealCard 2.5s ease-in forwards;
+}
+
+.chairman-info {
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.institute-info {
+    padding: 2% 10%;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+.card-title {
+    color: black;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.notice-board {
+    border-left: 2px solid rgba(0, 0, 0, 0.321);
+}
+
+.names {
+    text-align: center;
+}
+
+.dean-message {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin: 0 10px 10px 50px;
+}
+
+.message {
+    padding: 2% 6%;
+    border-left: 2px dashed black;
+}

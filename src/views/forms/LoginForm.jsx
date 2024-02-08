@@ -1,6 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
+import "../../style/loginForm.css"
+import { useToast } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 const LoginForm = () => {
+    const navigate = useNavigate();
+    const toast = useToast();
+    let authTokenStudent = localStorage.getItem('authTokenStudent');
+
+    useEffect(() => {
+        if (authTokenStudent)
+        {
+            navigate ('/student-portal');
+        }
+    }, [authTokenStudent])
+    
     const [login, setLogin] = useState({
         email: '',
         password: '',
@@ -11,25 +26,47 @@ const LoginForm = () => {
         setLogin({ ...login, [name]: value });
     }
     const [records, setRecords] = useState([]);
-    const HandleSubmit = (e) => {
+    const HandleSubmit = async (e) => {
         e.preventDefault();
         const newRecord = { ...login, id: new Date().getTime().toString() };
         setRecords([...records, newRecord]);
-        console.log(records);
         setLogin({ email: '', password: '' });
+        const response = await axios.post(`http://localhost:3000/api/v1/auth/student-login`, login);
+
+        authTokenStudent = response.data.authToken;
+        localStorage.setItem('authTokenStudent', authTokenStudent);
+
+        if (response.data.success) {
+            toast({
+                title: 'Logged in',
+                description: "Student successfully Logged In",
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            })
+            navigate ('/student-portal');
+        } else {
+            toast({
+                title: 'Error',
+                description: 'Incorrect email or password',
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
+        }
     }
     return (
         <>
             <div className="new-student">
-                <form action="" onSubmit={HandleSubmit} className="new-student-form py-5">
+                <form action="" onSubmit={HandleSubmit} className="new-student-form">
                     {/* email start */}
-                    <div className="form-floating mb-3 mx-5">
+                    <div className="form-floating mb-3 m-4" style={{width:'75%'}}>
                         <input type="email" name="email" className="form-control" id="floatingInput email" placeholder="name@example.com" value={login.email} onChange={HandleInput} />
                         <label htmlFor="floatingInput">Email address</label>
                     </div>
                     {/* email end */}
                     {/* password start */}
-                    <div className="form-floating mb-3 mx-5">
+                    <div className="form-floating mb-3 m-4" style={{width:'75%'}}>
                         <input type="password" name="password" className="form-control" id="floatingInput password" placeholder="****" value={login.password} onChange={HandleInput} />
                         <label htmlFor="floatingInput">Password</label>
                     </div>
@@ -37,18 +74,6 @@ const LoginForm = () => {
                     <button type="submit" className="form-floating mb-3 mx-5 button-styling">Login</button>
                 </form>
             </div>
-            {
-                records.map((curElem) => {
-                    return (
-                        <div key={curElem.id} className="show-student-data">
-                            <div className="mx-5 my-5">
-                                <p>{curElem.email}</p>
-                                <p>{curElem.password}</p>
-                            </div>
-                        </div>
-                    )
-                })
-            }
         </>
     )
 }

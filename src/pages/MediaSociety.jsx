@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import "../App.css"
+import "../style/societies.css"
+import "../style/department.css"
 import arif from "../assets/Images/favicon_io/arif.png"
 import kamran from "../assets/Images/favicon_io/kamran.png"
 import kashif from "../assets/Images/favicon_io/kashif.png"
-import master from "../assets/Images/favicon_io/master.png"
 import img from "../assets/Images/favicon_io/img.jpg"
 import img1 from "../assets/Images/favicon_io/img-1.jpg"
 import img2 from "../assets/Images/favicon_io/img-2.jpeg"
@@ -37,31 +38,14 @@ const MediaSociety = () => {
                 <div className="background-opacity">
                     <h2 className='society-names py-3'>
                         <div className="animated-line">
-                            <span className="individual-letter">{text.slice(0, charIndex)}</span>
+                            <span className="individual-letter text-black">{text.slice(0, charIndex)}</span>
                         </div>
                     </h2>
                 </div>
             </div>
             <div className="society-body">
-                <div className="patrons px-5">
-                    <div className="patron-info">
-                        <img src={arif} alt="Arif Butt" />
-                        <p><b>MAJR. RETD. DR. Muhammad Arif Butt</b>, Associate Professor</p>
-                    </div>
-                    <div className="patron-info">
-                        <img src={kamran} alt="Arif Butt" />
-                        <p><b>Dr. Muhammad Kamran Malik</b>, Associate Professor</p>
-                    </div>
-                    <div className="patron-info">
-                        <img src={kashif} alt="Arif Butt" />
-                        <p><b>Kashif Murtaza</b>, Assistant Professor</p>
-                    </div>
-                    <div className="patron-info">
-                        <img src={master} alt="Arif Butt" />
-                        <p><b>Muhammad Asim Siddique</b>, Web Master</p>
-                    </div>
-                </div>
-                <div className="society-content px-5">
+                {/* society introduction and aims starts */}
+                <div className="society-content p-5">
                     <p><i>"The basic idea is to provide students with an opportunity to develop life skills which will enable them to analyze the forms of modern communication and to help students to become wise consumers of media. We want to represent PUCIT and the life at PUCIT."</i></p>
                     <ul>
                         <li>It will be the part of our duties to cover all types of on campus and outside campus activities and events.</li>
@@ -104,8 +88,8 @@ const MediaSociety = () => {
                             <span className="carousel-control-next-icon" aria-hidden="true" />
                             <span className="visually-hidden">Next</span>
                         </button>
-                        <p className="py-3">FCIT Sports Society conducted a Sports League that consisted of two tournaments, Cricket and Badminton, last month that proved to be a huge success. The event was initiated with a small opening ceremony where the participants were told about the rules of the game. The games were started immediately after the opening ceremony. The cricket tournament was held at Khalid Bin Waleed Hostel’s ground and was for boys only. The badminton tournament was only for girls that was conducted at the badminton court in FCIT Old Campus. Participants showed great zeal for the game and every match of cricket and badminton was worth watching. All the participants showcased their skills and fought well to take the top position. On top of that, the audience was also very zealous and motivating towards their favorite players and teams and their cheers helped the players to showcase their talent in an even better way. Both tournaments received an extensive response from the students and no decorum of the university was disturbed at all. The conduction of this Sports League proved to be a breath of fresh air for students in their hectic routines. FCIT Sports Society encourages all the students to extravagantly participate in different games and leagues to enjoy these off-work times to the fullest.</p>
                     </div>
+                        <p className="py-3">FCIT Sports Society conducted a Sports League that consisted of two tournaments, Cricket and Badminton, last month that proved to be a huge success. The event was initiated with a small opening ceremony where the participants were told about the rules of the game. The games were started immediately after the opening ceremony. The cricket tournament was held at Khalid Bin Waleed Hostel’s ground and was for boys only. The badminton tournament was only for girls that was conducted at the badminton court in FCIT Old Campus. Participants showed great zeal for the game and every match of cricket and badminton was worth watching. All the participants showcased their skills and fought well to take the top position. On top of that, the audience was also very zealous and motivating towards their favorite players and teams and their cheers helped the players to showcase their talent in an even better way. Both tournaments received an extensive response from the students and no decorum of the university was disturbed at all. The conduction of this Sports League proved to be a breath of fresh air for students in their hectic routines. FCIT Sports Society encourages all the students to extravagantly participate in different games and leagues to enjoy these off-work times to the fullest.</p>
 
                     <div className="society-registration">
                         {buttonClicked ?
@@ -114,25 +98,57 @@ const MediaSociety = () => {
                             // It will reder before the button is clicked
                             (<button className="button-styling" onClick={HandleClick}><Link to="/media-society/society-registration">Registration, One click Away!</Link></button>)}
                     </div>
+                </div>
+                {/* society introduction and aims ends */}
+                {/* patrons of media society  starts*/}
+                <div className="leadership">
+                    <div className="leadership-heading">
+                        <h2 className='text-white text-center py-4'>Patrons of FCIT Media Society</h2>
+                    </div>
+                    <div className="leadership-container">
+                        <div className="leadership-data p-3">
+                            <div className="name-img text-center">
+                                <div className="name-designation py-3">
+                                    <div className="designation"><h5 className='p-2 text-center'>Head of PUMS</h5></div>
+                                    <div className="name"><p>Major Retd. Dr Muhammad Arif Butt</p></div>
+                                </div>
+                                <div className="img"><img src={arif} alt="Chairman of Cs" style={{ width: '200px', height: '150px' }} /></div>
+                            </div>
+                            <div className="specialization text-white">
+                                <h3>Email: </h3><p><Link to="www.gmail.com">arif@pucti.edu.pk</Link></p>
+                                <h3>Specialisation: </h3><p>Internet of Things (IoT), Machine-to-Machine (M2M) Communication, Data-centric Networking, and Software Defined Networks (SDNs)</p>
+                            </div>
+                        </div>
+                        <div className="leadership-data p-3">
+                            <div className="name-img text-center">
+                                <div className="name-designation py-3">
+                                    <div className="designation"><h5 className='p-2 text-center'>Deputy Head of PUMS</h5></div>
+                                    <div className="name"><p>Dr Muhammad Kamran Mirza</p></div>
+                                </div>
+                                <div className="img"><img src={kamran} alt="Coordinator of Cs" style={{ width: '200px', height: '150px' }} /></div>
+                            </div>
+                            <div className="specialization text-white">
+                                <h3>Email: </h3><p><Link to="www.gmail.com">kamran@pucti.edu.pk</Link></p>
+                                <h3>Specialisation: </h3><p>Software Engineering, Software Quality Assurance, Software Project Management</p>
+                            </div>
+                        </div>
+                        <div className="leadership-data p-3">
+                            <div className="name-img text-center">
+                                <div className="name-designation py-3">
+                                    <div className="designation"><h5 className='p-2 text-center'>Event Management Chief of PUMS</h5></div>
+                                    <div className="name"><p>Dr Muhammad Kashif Raza</p></div>
+                                </div>
+                                <div className="img"><img src={kashif} alt="Coordinator of Cs" style={{ width: '200px', height: '150px' }} /></div>
+                            </div>
+                            <div className="specialization text-white">
+                                <h3>Email: </h3><p><Link to="www.gmail.com">kashif@pucti.edu.pk</Link></p>
+                                <h3>Specialisation: </h3><p>Programming, Data Structures</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* patrons of media society ends */}
 
-                </div>
-                <div className="contact px-5">
-                    <ul>
-                        <li>
-                            <b>Emails</b>:
-                            <ul>
-                                <Link to="https://mail.google.com"><li>arif@pucit.edu.pk</li></Link>
-                                <Link to="https://mail.google.com"><li>kamran@pucit.edu.pk</li></Link>
-                                <Link to="https://mail.google.com"><li>kashif@pucit.edu.pk</li></Link>
-                                <Link to="https://mail.google.com"><li>webmaster@pucit.edu.pk</li></Link>
-                            </ul>
-                        </li>
-                        <Link to="https://www.facebook.com/pucit.media.society"><li><b>Our Facebook Page</b></li></Link>
-                        <Link to="https://www.instagram.com/pucit.media.society"><li><b>Our Instagram Page</b></li></Link>
-                        <Link to="https://www.twitter.com/pucit.media.society"><li><b>Our Twitter Page</b></li></Link>
-                        <Link to="https://www.linkedin.com/pucit.media.society"><li><b>Our Linkedin Page</b></li></Link>
-                    </ul>
-                </div>
             </div>
         </>
     )
