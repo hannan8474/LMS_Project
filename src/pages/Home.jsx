@@ -63,10 +63,14 @@ const Home = () => {
       {/* Modal Dialog Ends */}
       {/* Video and ovelaying text starts */}
       <div className="introductory-words">
-        <div className="words">
-          <h2 className='words'>GET READY</h2>
-          <h2 className='words-smaller'> TO IGNITE YOUR TRUE POTENTIAL</h2>
-        </div>
+        {!isOpen ?
+          (<div className="words">
+            <h2 className='words words-animation-1'>GET READY</h2>
+            <h2 className='words-smaller words-animation-2'> TO IGNITE YOUR TRUE POTENTIAL</h2>
+          </div>)
+          :
+          ""
+        }
       </div>
       <div className='introductory-video'>
         <video src={homevideo} autoPlay loop muted className='video'>
@@ -111,7 +115,6 @@ const Home = () => {
                         <b>Dr Shahzad Sarwar</b> <br />
                         Dean FCIT<br />Chairman Department of Computer Science<br />Email:dean.fcit@pucit.edu.pk
                       </p>
-
                     </div>
                     <DeanIntro />
                   </div>

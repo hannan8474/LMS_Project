@@ -20,3 +20,16 @@
     font-size: 120%;
 }
 
+.button-admin {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin {
+    padding-right: 4%;
+}
+
+.admin-info {
+    opacity: 0.5;
+    font-size: 80%;
+}

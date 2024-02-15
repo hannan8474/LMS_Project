@@ -11,7 +11,11 @@
     display: grid;
     grid-template-columns: auto auto auto;
     width: 60%;
-    margin: 50px 0 50px 300px;
+    margin: 5% 20%;
+}
+
+.society {
+    margin: 2%;
 }
 
 .background-opacity {
@@ -23,6 +27,6 @@
     justify-content: center;
     align-items: center;
 }
-.carousel {
+.events {
     margin-left: 310px;
 }

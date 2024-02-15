@@ -2,9 +2,11 @@ import React from 'react'
 import { useState, useEffect } from "react"
 import "../../App.css"
 import "../../style/loginForm.css"
-import axios from 'axios'
 import { useToast } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
+import postApiService from '../../services/postApiService'
+import { endPoints } from '../../constants/urls/urls'
+import "../../style/loginForm.css"
 
 const NewStudent = () => {
   const navigate = useNavigate();
@@ -92,7 +94,7 @@ const NewStudent = () => {
 
     try {
 
-      const formData = new FormData();
+      const formData = new formData1();
       formData.append('name', newStudent.name);
       formData.append('cnic', newStudent.cnic);
       formData.append('email', newStudent.email);
@@ -109,7 +111,8 @@ const NewStudent = () => {
       });
       formData.append('profileImage', newStudent.profileImage);
 
-      const response = await axios.post(`http://localhost:3000/api/v1/add-student`, formData, config);
+      // const response = await axios.post(`http://localhost:3000/api/v1/add-student`, formData, config);
+      const response = await postApiService(endPoints.ADD_STUDENT, formData, config)
 
       console.log(response)
       if (response.data.success) {
@@ -142,7 +145,7 @@ const NewStudent = () => {
   return (
     <>
       <div className="new-student">
-        <form action="" onSubmit={HandleSubmit} className='new-student-form'>
+        <form action="" onSubmit={HandleSubmit} className='new-form'>
           {/* name start */}
           <div className="form-floating mb-3 mx-5 my-5" style={{ width: '75%' }}>
             <input type="text" name="name" className="form-control" id="floatingInput name" placeholder="John Doe" value={newStudent.name} onChange={HandleInput} />

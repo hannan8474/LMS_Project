@@ -3,6 +3,7 @@ import { Link, Outlet } from 'react-router-dom'
 import "../App.css"
 import "../style/societies.css"
 import "../style/department.css"
+import "../style/responsive.css"
 import arif from "../assets/Images/favicon_io/arif.png"
 import kamran from "../assets/Images/favicon_io/kamran.png"
 import kashif from "../assets/Images/favicon_io/kashif.png"
@@ -56,7 +57,7 @@ const MediaSociety = () => {
                         <li>PUMS will combine several skills and ideas to end up with creative product.</li>
                         <li>Any Student who is creative and willing to learn is welcomed to join and become a member of this ever-growing group.</li>
                     </ul>
-                    <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade" data-bs-ride="carousel">
+                    <div id="carouselExampleAutoplaying" className="carousel events slide carousel-fade" data-bs-ride="carousel">
                         <div className="carousel-inner">
                             <div className="carousel-item active" data-bs-interval="3000">
                                 <img src={img} alt="Image" classname="d-block w-100" />

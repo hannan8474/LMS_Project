@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useToast } from '@chakra-ui/react'
+import postApiService from '../../services/postApiService'
+import { endPoints } from '../../constants/urls/urls'
 
 const AdminSignup = () => {
     const toast = useToast()
@@ -30,8 +32,10 @@ const AdminSignup = () => {
             password: '',
         })
 
-        const response = await axios.post(`http://localhost:3000/api/v1/auth/sign-up`, signUp);
-    
+        // const response = await axios.post(`http://localhost:3000/api/v1/auth/sign-up`, signUp);
+        const response = await postApiService(endPoints.ADMIN_SIGNUP, signUp)
+        console.log(response)
+
         if (response.data.success) {
             toast({
                 title: 'Signed Up',
@@ -53,7 +57,7 @@ const AdminSignup = () => {
     return (
         <>
             <div className="new-student">
-                <form action="" onSubmit={HandleSubmit} className="new-student-form py-5">
+                <form action="" onSubmit={HandleSubmit} className="new-form py-5">
                     {/* name start */}
                     <div className="form-floating mb-3 mx-5">
                         <input type="name" name="name" className="form-control" id="floatingInput name" placeholder="John Doe" value={signUp.name} onChange={HandleInput} />

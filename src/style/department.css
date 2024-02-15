@@ -48,7 +48,6 @@
     border: 2px solid white;
     display: flex;
     flex-direction: column;
-
 }
 
 .designation {
@@ -59,8 +58,6 @@
 .name-img {
     display: flex;
     flex-direction: row;
-    height: auto;
-    width: 100%;
 }
 
 .leadership-container {
@@ -71,7 +68,6 @@
 }
 
 .name {
-    font-size: 150%;
     font-weight: bold;
     color: white;
     display: flex;
