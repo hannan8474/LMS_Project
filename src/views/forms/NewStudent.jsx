@@ -94,7 +94,7 @@ const NewStudent = () => {
 
     try {
 
-      const formData = new formData1();
+      const formData = new FormData();
       formData.append('name', newStudent.name);
       formData.append('cnic', newStudent.cnic);
       formData.append('email', newStudent.email);
