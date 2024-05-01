@@ -107,7 +107,7 @@ const Home = () => {
             <h2 className='top-heading py-3'>Dean and chairperson's messages</h2>
             <div id="carouselExampleAutoplaying" className="carousel slide carousel-fade" data-bs-ride="carousel">
               <div className="carousel-inner">
-                <div className="carousel-item active" data-bs-interval="3000">
+                <div className="carousel-item active" data-bs-interval="2000">
                   <div className='dean-message my-4'>
                     <div className="intro">
                       <img src={chairmanCS} alt="chairman" className="chairman-images" />
@@ -167,7 +167,7 @@ const Home = () => {
               </div>
               <div className="card-body">
                 <h5 className="card-title">Department of Software Engineering</h5>
-                <button className="button-styling"><Link to="/software-enginerring" >Go there</Link></button>
+                <button className="button-styling"><Link to="/software-engineering" >Go there</Link></button>
               </div>
             </div>
             <div className="card card-3">
