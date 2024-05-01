@@ -52,7 +52,7 @@
 
 <h3>Admin Panel</h3>
 <ul>
-    <li>New administrators can sign up for admin privileges by visiting: http://localhost:3000/api/v1/auth/sign-up</li>
+    <li>New administrators can sign up for admin privileges by visiting: https://localhost:3000/api/v1/auth/sign-up</li>
     <li>Existing administrators can log in via: http://localhost:3000/api/v1/auth/admin-login</li>
 </ul>
 
@@ -62,8 +62,7 @@
     <li>Clone the repository to your local machine:</li>
     <b>git clone https://github.com/hannan8474/LMS_Project.git</b>
     <li>Install Project Dependencies</li>
-    <p><b>cd lmsProject</b></p>
-    <p><b>npm install</b></p>
+    <p><b>cd lmsProject</b><br/><b>npm install</b></p>
     <li>Make necessary changes or enhancements to the project.</li>
     <li>Test your modifications locally:</li>
     <b>npm start</b>
