@@ -62,8 +62,8 @@
     <li>Clone the repository to your local machine:</li>
     <b>git clone https://github.com/hannan8474/LMS_Project.git</b>
     <li>Install Project Dependencies</li>
-    <b>cd lmsProject</b>
-    <b>npm install</b>
+    <p><b>cd lmsProject</b></p>
+    <p><b>npm install</b></p>
     <li>Make necessary changes or enhancements to the project.</li>
     <li>Test your modifications locally:</li>
     <b>npm start</b>
